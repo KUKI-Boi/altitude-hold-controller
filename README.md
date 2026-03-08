@@ -1,4 +1,4 @@
-# Altitude Hold Controller using Cascade PID (3DOF Aircraft)
+# ✈️ Altitude Hold Controller using Cascade PID (3DOF Aircraft)
 
 This project demonstrates the **design and simulation of an altitude hold autopilot** using a **cascade PID control architecture** for a **3-DOF longitudinal aircraft model** in MATLAB/Simulink.
 
@@ -6,12 +6,12 @@ The controller automatically maintains the desired aircraft altitude by adjustin
 
 ---
 
-## Project Overview
+## 📌 Project Overview
 
 The system uses a **cascade control architecture** consisting of two control loops:
 
-- **Outer Loop:** Altitude PID Controller  
-- **Inner Loop:** Pitch PID Controller  
+- 🔹 **Outer Loop:** Altitude PID Controller  
+- 🔹 **Inner Loop:** Pitch PID Controller  
 
 The altitude reference is compared with the actual aircraft altitude to generate an altitude error. The altitude PID controller processes this error and generates a **pitch reference**. The pitch PID controller then generates an **elevator command**, which drives the aircraft model. The updated aircraft altitude is fed back into the system to reduce error.
 
@@ -19,7 +19,7 @@ This nested control structure improves system stability and disturbance rejectio
 
 ---
 
-## Software Requirements
+## 🧰 Software Requirements
 
 To run this simulation the following software is required:
 
@@ -29,81 +29,88 @@ To run this simulation the following software is required:
 | Simulink | Required |
 | Aerospace Blockset | Required |
 
-The simulation relies on the **3DOF longitudinal aircraft model** provided by the Aerospace Blockset.
+⚠️ The simulation relies on the **3DOF longitudinal aircraft model** provided by the Aerospace Blockset.
 
 ---
 
-## Control Architecture
+## ⚙️ Control Architecture
 
 The controller operates using a **cascade PID structure**.
 
-1. Altitude reference is compared with measured altitude.
-2. Altitude PID controller generates a pitch reference.
-3. Pitch PID controller generates elevator deflection.
-4. Aircraft model responds to elevator input.
-5. Updated altitude is fed back to the controller.
+1️⃣ Altitude reference is compared with measured altitude.  
+2️⃣ Altitude PID controller generates a pitch reference.  
+3️⃣ Pitch PID controller generates elevator deflection.  
+4️⃣ Aircraft model responds to elevator input.  
+5️⃣ Updated altitude is fed back to the controller.
 
 This approach separates the fast and slow dynamics of the system:
 
-- The **inner pitch loop** stabilizes fast aircraft pitch dynamics.
-- The **outer altitude loop** regulates the slower altitude dynamics.
+- 🛫 The **inner pitch loop** stabilizes fast aircraft pitch dynamics.  
+- 📏 The **outer altitude loop** regulates the slower altitude dynamics.
 
 ---
 
-## Simulation Outputs
+## 📊 Simulation Outputs
 
 The model produces time-domain plots for the following variables:
 
-- Angle of Attack (α)
-- Pitch Angle (θ)
-- Pitch Rate (q)
-- Aircraft Altitude (h)
+- 📈 Angle of Attack (α)
+- 📈 Pitch Angle (θ)
+- 📈 Pitch Rate (q)
+- 📈 Aircraft Altitude (h)
 
 These responses are used to evaluate the performance of the altitude hold controller.
 
 ---
 
-## Expected System Behavior
+## 🎯 Expected System Behavior
 
 When the altitude reference changes from **2000 m to 2200 m**, the system response typically shows:
 
-- Aircraft pitching upward
-- Smooth altitude increase
-- Moderate overshoot
-- System settling at the commanded altitude
-- Pitch angle returning close to equilibrium
+✔ Aircraft pitching upward  
+✔ Smooth altitude increase  
+✔ Moderate overshoot  
+✔ System settling at the commanded altitude  
+✔ Pitch angle returning close to equilibrium  
 
 ---
 
-## Parameter Modifications
+## 🔧 Parameter Modifications
 
-Users can experiment with system behavior by modifying the following parameters within the Simulink model:
+Users can experiment with system behavior by modifying the following parameters within the Simulink model.
 
-**Altitude Reference Step Block**
+### 1️⃣ Altitude Reference Step Block
+
+Modify:
 - Final Value
 - Step Time
 
-**PID Controller Gains**
-- Proportional Gain (Kp)
-- Integral Gain (Ki)
-- Derivative Gain (Kd)
+### 2️⃣ PID Controller Gains
+
+Modify the gains inside the controller blocks:
+
+| Gain | Effect |
+|-----|------|
+| Kp | Faster response |
+| Ki | Removes steady-state error |
+| Kd | Improves damping |
 
 Adjusting these parameters allows users to observe different system responses such as faster response, increased overshoot, or improved damping.
 
 ---
 
-## Example Experiments
+## 🧪 Example Experiments
 
 Possible experiments include:
 
-- Increasing the altitude command (e.g., 2000 m → 2500 m)
-- Reducing altitude PID gains to observe slower response
-- Increasing derivative gain to reduce overshoot
-- Modifying controller gains to study system stability
+🔹 Increasing the altitude command (e.g., **2000 m → 2500 m**)  
+🔹 Reducing altitude PID gains to observe slower response  
+🔹 Increasing derivative gain to reduce overshoot  
+🔹 Modifying controller gains to study system stability  
 
 ---
 
-## Limitations
+## ⚠️ Limitations
 
 - The model represents **3DOF longitudinal aircraft dynamics only**
 - Roll and yaw dynamics are not included
@@ -112,20 +119,20 @@ Possible experiments include:
 
 ---
 
-## Future Improvements
+## 🚀 Future Improvements
 
 Possible extensions of this project include:
 
-- Full **6DOF aircraft modeling**
-- **Vertical speed hold** control mode
-- **Wind disturbance modeling**
-- **FlightGear visualization**
-- **Hardware-in-the-loop testing**
+- ✈️ Full **6DOF aircraft modeling**
+- 📊 **Vertical speed hold** control mode
+- 🌬 Wind disturbance modeling
+- 🖥 FlightGear visualization
+- 🔌 Hardware-in-the-loop testing
 
 ---
 
-## Author
+## 👨‍💻 Author
 
-Likith Kumar B M  
+**Likith Kumar B M**  
 B.Tech – Electrical and Electronics Engineering  
 CHRIST (Deemed to be University)
