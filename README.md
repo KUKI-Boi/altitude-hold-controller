@@ -3,7 +3,10 @@
 ![Altitude Hold Controller](altitude_animation.gif)
 
 </div>
-# ✈️ Altitude Hold Controller using Cascade PID (3DOF Aircraft)
+
+---
+
+## ✈️ Altitude Hold Controller using Cascade PID (3DOF Aircraft)
 
 This project demonstrates the **design and simulation of an altitude hold autopilot** using a **cascade PID control architecture** for a **3-DOF longitudinal aircraft model** in MATLAB/Simulink.
 
